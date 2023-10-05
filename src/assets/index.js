@@ -24,10 +24,20 @@ import threejs from "./tech/threejs.svg";
 
 import idekite from "./company/idekite.png";
 import jempolTech from "./company/jempol-tech.png";
+import dicoding from "./company/dicoding.png";
+import skilvul from "./company/skilvul.jpg";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import ecommerce from "./project/ecommerce.png";
+
+import DicodingDasarGitdenganGitHub from "./certificate/Dicoding-Dasar-Git-dengan-GitHub.png";
+import DicodingDasarManajemenProyek from "./certificate/Dicoding-Dasar-Manajemen-Proyek.png";
+import DicodingDasarVisualisasiData from "./certificate/Dicoding-Dasar-Visualisasi-Data.png";
+import DicodingProgrammingLogic101 from "./certificate/Dicoding-Programming-Logic-101.png";
+import SkilvulJavaScriptDasar from "./certificate/Skilvul-JavaScript-Dasar.png";
+import SkilvulJavaScriptIntermediate from "./certificate/Skilvul-JavaScript-Intermediate.png";
 
 export {
   logo,
@@ -54,7 +64,15 @@ export {
   threejs,
   idekite,
   jempolTech,
+  dicoding,
+  skilvul,
   carrent,
   jobit,
   tripguide,
+  DicodingDasarGitdenganGitHub,
+  DicodingDasarManajemenProyek,
+  DicodingDasarVisualisasiData,
+  DicodingProgrammingLogic101,
+  SkilvulJavaScriptDasar,
+  SkilvulJavaScriptIntermediate,
 };

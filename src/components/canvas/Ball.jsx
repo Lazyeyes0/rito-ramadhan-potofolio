@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import {
   Decal,
@@ -38,11 +38,22 @@ const Ball = (props) => {
 };
 
 const BallCanvas = ({ icon }) => {
+  const [isGrabbing, setIsGrabbing] = useState(false);
+
+  const handleMouseHold = (e) => {
+    setIsGrabbing(true);
+  };
+  const handleMouseFree = (e) => {
+    setIsGrabbing(false);
+  };
   return (
     <Canvas
       frameloop="demand"
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
+      onMouseDown={handleMouseHold}
+      onMouseUp={handleMouseFree}
+      className={isGrabbing ? "cursor-grabbing" : "cursor-grab"}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />

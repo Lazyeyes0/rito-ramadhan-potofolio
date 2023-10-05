@@ -20,6 +20,14 @@ import {
   threejs,
   jempolTech,
   sql,
+  DicodingDasarGitdenganGitHub,
+  dicoding,
+  DicodingDasarManajemenProyek,
+  DicodingDasarVisualisasiData,
+  DicodingProgrammingLogic101,
+  SkilvulJavaScriptDasar,
+  skilvul,
+  SkilvulJavaScriptIntermediate,
 } from "../assets";
 
 export const navLinks = [
@@ -136,30 +144,48 @@ const experiences = [
   },
 ];
 
-const testimonials = [
+const certificates = [
   {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    name: "Javascript Intermediate",
+    image: SkilvulJavaScriptIntermediate,
+    company: "Skilvul",
+    companyImage: skilvul,
+    color: "pink-text-gradient",
   },
   {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    name: "Javascript Dasar",
+    image: SkilvulJavaScriptDasar,
+    company: "Skilvul",
+    companyImage: skilvul,
+    color: "pink-text-gradient",
   },
   {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    name: "Dasar Manajemen Proyek",
+    image: DicodingDasarManajemenProyek,
+    company: "Dicoding",
+    companyImage: dicoding,
+    color: "blue-text-gradient",
+  },
+  {
+    name: "Dasar Visualisasi Data",
+    image: DicodingDasarVisualisasiData,
+    company: "Dicoding",
+    companyImage: dicoding,
+    color: "blue-text-gradient",
+  },
+  {
+    name: "Programming Logic 101",
+    image: DicodingProgrammingLogic101,
+    company: "Dicoding",
+    companyImage: dicoding,
+    color: "blue-text-gradient",
+  },
+  {
+    name: "Dasar Git dengan GitHub",
+    image: DicodingDasarGitdenganGitHub,
+    company: "Dicoding",
+    companyImage: dicoding,
+    color: "blue-text-gradient",
   },
 ];
 
@@ -207,6 +233,48 @@ const projects = [
     source_code_link: "https://github.com/",
   },
   {
+    name: "Job IT",
+    description:
+      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "scss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: jobit,
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Job IT",
+    description:
+      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+    tags: [
+      {
+        name: "react",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "restapi",
+        color: "green-text-gradient",
+      },
+      {
+        name: "scss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: jobit,
+    source_code_link: "https://github.com/",
+  },
+  {
     name: "Trip Guide",
     description:
       "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
@@ -229,4 +297,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, experiences, projects, certificates };

@@ -29,6 +29,7 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isGrabbing, setIsGrabbing] = useState(false);
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
 
@@ -44,12 +45,23 @@ const ComputersCanvas = () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   });
+
+  const handleMouseHold = (e) => {
+    setIsGrabbing(true);
+  };
+  const handleMouseFree = (e) => {
+    setIsGrabbing(false);
+  };
+
   return (
     <Canvas
       frameloop="demand"
       shadows
       camera={{ position: [20, 3, 5], fov: 30 }}
       gl={{ preserveDrawingBuffer: true }}
+      onMouseDown={handleMouseHold}
+      onMouseUp={handleMouseFree}
+      className={isGrabbing ? "cursor-grabbing" : "cursor-grab"}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls

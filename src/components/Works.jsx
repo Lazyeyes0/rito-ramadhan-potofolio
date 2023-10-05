@@ -1,11 +1,13 @@
-import { Tilt } from "react-tilt";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const ProjectCart = ({
   index,
@@ -15,12 +17,24 @@ const ProjectCart = ({
   image,
   source_code_link,
 }) => {
+  const [isGrabbing, setIsGrabbing] = useState(false);
+
+  const handleMouseHold = (e) => {
+    setIsGrabbing(true);
+  };
+  const handleMouseFree = (e) => {
+    setIsGrabbing(false);
+  };
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{ max: 45, scale: 1, speed: 450 }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-      >
+    <div
+      onMouseDown={handleMouseHold}
+      onMouseUp={handleMouseFree}
+      className={`py-10 ml-3 ${
+        isGrabbing ? "cursor-grabbing" : "cursor-pointer"
+      }`}
+    >
+      <div className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full z-10">
         <div className="relative w-full h-[230px]">
           <img
             src={image}
@@ -51,12 +65,30 @@ const ProjectCart = ({
             </p>
           ))}
         </div>
-      </Tilt>
-    </motion.div>
+      </div>
+    </div>
   );
 };
 
 const Works = () => {
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -75,11 +107,19 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <Carousel
+        swipeable={true}
+        showDots={true}
+        responsive={responsive}
+        infinite={true}
+        autoPlaySpeed={1000}
+        transitionDuration={500}
+        className="mt-10 flex flex-wrap"
+      >
         {projects.map((project, index) => (
           <ProjectCart key={`project-${index}`} index={index} {...project} />
         ))}
-      </div>
+      </Carousel>
     </>
   );
 };

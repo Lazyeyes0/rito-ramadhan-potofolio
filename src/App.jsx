@@ -6,10 +6,11 @@ import {
   Hero,
   Works,
   Navbar,
-  Feedbacks,
+  Certificate,
   Tech,
   StarsCanvas,
 } from "./components";
+import Menu from "./components/Menu";
 
 const App = () => {
   return (
@@ -23,11 +24,12 @@ const App = () => {
         <Experience />
         <Tech />
         <Works />
-        <Feedbacks />
+        <Certificate />
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />
         </div>
+        <Menu />
       </div>
     </BrowserRouter>
   );
